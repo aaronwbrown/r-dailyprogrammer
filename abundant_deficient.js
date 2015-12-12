@@ -1,4 +1,7 @@
 /* 
+Daily Programmer Challenge #243 [easy] 2015-11-30
+https://www.reddit.com/r/dailyprogrammer/comments/3uuhdk/20151130_challenge_243_easy_abundant_and/
+
 In number theory, a deficient or deficient number is a number n for which the 
 sum of divisors sigma(n)<2n, or, equivalently, the sum of proper divisors 
 (or aliquot sum) s(n)<n. The value 2n - sigma(n) (or n - s(n)) is called the 
