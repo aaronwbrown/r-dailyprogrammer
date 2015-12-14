@@ -34,7 +34,7 @@ var checkDivisible = function(number) {
   } else {
   		if ((number - 1)%3 === 0) {
   			console.log(number + " -1")
-  			return number / 3;
+  			return (number -1) / 3;
   		} else {
   			console.log(number + " +1")
   			return (number + 1)/3;
