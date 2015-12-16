@@ -76,9 +76,11 @@ var changeCalc = function(num) {
 
 changeCalc(myNum);
 
+/*
+//Input - 45.67
 //OUTPUT
-
 Quarters: 180
 Dimes: 6
 Nickels: 1
 Pennies: 2
+*/
