@@ -28,47 +28,41 @@ How I want to do this is run a modulo loop on all the numbers up to and includin
 Those w/o remainders are a divisor.
 */
 
-var myNum = 21;
-var myNumTwice = myNum * 2
 var divisors = [];
-var divisorsSum;
 
-// function to find out of a number is a divisor
-var isDivisor = function(number) {
-  if (myNum%number === 0) {
-      return number;
-  }
-};
-
-// for loop and if statement storing divisors in the divisors array
-for (i = 0; i <= myNum; i++) {
-    if (isDivisor(i)) {
-        divisors.push(i);
+var getDivisors = function(num) {
+    for (i = 0; i <= num; i++) {
+        if (num % i == 0) {
+            divisors.push(i)
+        }    
     }
-}
+};
 
 // add divisors together
-divisorsSum = (eval(divisors.join('+')));
-
-var deficientBy = function() {
-	return myNumTwice - divisorsSum;
+var addRounded = function(previousValue, currentValue) {
+    return previousValue + Math.round(currentValue);    
 };
 
-var abundantBy = function() {
-	return divisorsSum - myNumTwice;
-}
+var deficientBy = function(num, sum) {
+    return (num * 2) - sum;
+};
 
-var isDeficient = function() {
-	if (myNumTwice > divisorsSum) {
-		console.log(myNum + " is deficient by " + deficientBy() + ", and its divisors are " + divisors);
+var abundantBy = function(sum, num) {
+    return sum - (num * 2);
+};
+
+var isDeficient = function(num) {
+	getDivisors(num);
+	var divisorsSum = divisors.reduce(addRounded, 0)
+	if ((num * 2) > divisorsSum) {
+		console.log(num + " is deficient by " + deficientBy(num, divisorsSum) + ", and its divisors are " + divisors);
 	} else {
-		console.log(myNum + " is not deficient. In fact it is abundant by " + abundantBy() + ", and its divisors are " + divisors);
+		console.log(num + " is not deficient. In fact it is abundant by " + abundantBy(divisorsSum,num) + ", and its divisors are " + divisors);
 	}
 };
 
+isDeficient(21);
 
-
-console.log(isDeficient());
 
 
 
